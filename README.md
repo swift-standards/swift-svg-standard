@@ -63,13 +63,13 @@ All functionality is provided by the underlying W3C SVG 2 implementation.
 - [swift-svg-printer](https://github.com/coenttb/swift-svg-printer): Rendering layer for SVG to String/bytes
 - [swift-svg](https://github.com/coenttb/swift-svg): Type-safe SVG generation
 
-## Migration from swift-svg-types
+## Migration from swift-svg-standard
 
-If you're migrating from `swift-svg-types`, update your imports and type references:
+If you're migrating from `swift-svg-standard`, update your imports and type references:
 
 ```swift
 // Old:
-import SVGTypes
+import SVG_Standard
 let transform = SVGTransform.translate(x: 10, y: 20)
 
 // New:
@@ -79,7 +79,7 @@ let transform = W3C_SVG2.Types.Transform.translate(x: 10, y: 20)
 
 ### Type Mapping
 
-| swift-svg-types | swift-w3c-svg |
+| swift-svg-standard | swift-w3c-svg |
 |-----------------|---------------|
 | `SVGTransform` | `W3C_SVG2.Types.Transform` |
 | `SVGLength` | `W3C_SVG2.Types.Length` |

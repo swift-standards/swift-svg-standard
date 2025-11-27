@@ -6,15 +6,15 @@
 //
 
 import Testing
-import W3C_SVG
+import SVG_Standard
 
 @Suite("SVG Standard - Re-export Verification")
 struct SVG_Standard_Tests {
 
-    @Test("W3C_SVG2 namespace accessible")
+    @Test("SVG_Standard namespace accessible")
     func namespaceAccessible() {
-        // Verify we can access W3C_SVG2 types through the re-export
-        let circle = W3C_SVG2.Shapes.Circle(cx: 50, cy: 50, r: 40)
+        // Verify we can access SVG_Standard types through the re-export
+        let circle = SVG_Standard.Shapes.Circle(cx: 50, cy: 50, r: 40)
         #expect(circle.cx == 50)
         #expect(circle.cy == 50)
         #expect(circle.r == 40)
@@ -22,31 +22,34 @@ struct SVG_Standard_Tests {
 
     @Test("Types namespace accessible")
     func typesAccessible() {
-        let length = W3C_SVG2.Types.Length.px(100)
-        #expect(length.stringValue == "100.0px")
+        let length = SVG_Standard.Types.Length.px(100)
+        #expect(length.stringValue == "100px")
     }
 
     @Test("PaintServers namespace accessible")
     func paintServersAccessible() {
-        let gradient = W3C_SVG2.PaintServers.LinearGradient(id: "test")
+        let gradient = SVG_Standard.PaintServers.LinearGradient(id: "test")
         #expect(gradient.id == "test")
     }
 
     @Test("Document namespace accessible")
     func documentAccessible() {
-        let svg = W3C_SVG2.Document.SVG(width: 100, height: 100)
+        let svg = SVG_Standard.Document.SVG(
+            width: 100,
+            height: 100
+        )
         #expect(svg.width == 100)
     }
 
     @Test("Painting namespace accessible")
     func paintingAccessible() {
-        let lineCap = W3C_SVG2.Painting.LineCap.round
+        let lineCap = SVG_Standard.Painting.LineCap.round
         #expect(lineCap.rawValue == "round")
     }
 
     @Test("Text namespace accessible")
     func textAccessible() {
-        let text = W3C_SVG2.Text.Text(content: "Hello")
+        let text = SVG_Standard.Text.Text(content: "Hello")
         #expect(text.content == "Hello")
     }
 }
