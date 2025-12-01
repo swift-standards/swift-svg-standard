@@ -23,7 +23,7 @@ struct SVG_Standard_Tests {
     @Test("Types namespace accessible")
     func typesAccessible() {
         let length = SVG_Standard.Types.Length.px(100)
-        #expect(length.stringValue == "100px")
+        #expect(length.description == "100px")
     }
 
     @Test("PaintServers namespace accessible")
