@@ -5,8 +5,8 @@
 //  Basic smoke tests to verify re-export functionality
 //
 
-import Testing
 import SVG_Standard
+import Testing
 
 @Suite("SVG Standard - Re-export Verification")
 struct SVG_Standard_Tests {
