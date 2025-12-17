@@ -18,7 +18,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-w3c-svg", from: "0.2.0"),
+        .package(name: "swift-w3c-svg", path: "../swift-w3c-svg-unified"),
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.18.0"),
     ],
     targets: [
         .target(
@@ -29,7 +30,10 @@ let package = Package(
         ),
         .testTarget(
             name: "SVG Standard Tests",
-            dependencies: ["SVG Standard"]
+            dependencies: [
+                "SVG Standard",
+                .product(name: "InlineSnapshotTesting", package: "swift-snapshot-testing"),
+            ]
         ),
     ],
     swiftLanguageModes: [.v6]

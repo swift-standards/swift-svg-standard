@@ -5,10 +5,11 @@
 //  Basic smoke tests to verify re-export functionality
 //
 
+import InlineSnapshotTesting
 import SVG_Standard
 import Testing
 
-@Suite("SVG Standard - Re-export Verification")
+@Suite("SVG Standard - Re-export Verification", .snapshots(record: .missing))
 struct SVG_Standard_Tests {
 
     @Test("SVG_Standard namespace accessible")
