@@ -18,7 +18,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(name: "swift-w3c-svg", path: "../swift-w3c-svg-unified"),
+        .package(url: "https://github.com/swift-standards/swift-w3c-svg.git", from: "0.3.0"),
         .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.18.0"),
     ],
     targets: [
