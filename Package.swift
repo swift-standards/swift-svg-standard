@@ -19,7 +19,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../swift-w3c-svg"),
-        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.18.0")
+        // .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.18.0")
     ],
     targets: [
         .target(
@@ -27,7 +27,13 @@ let package = Package(
             dependencies: [
                 .product(name: "W3C SVG", package: "swift-w3c-svg")
     ]
-        )
+        ),
+        .testTarget(
+            name: "SVG Standard Tests",
+            dependencies: [
+                "SVG Standard",
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
@@ -38,6 +44,7 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
         .enableExperimentalFeature("Lifetimes"),
         .enableExperimentalFeature("SuppressedAssociatedTypes"),
         .enableExperimentalFeature("SuppressedAssociatedTypesWithDefaults"),

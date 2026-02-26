@@ -5,7 +5,7 @@
 //  Basic smoke tests to verify re-export functionality
 //
 
-import InlineSnapshotTesting
+// import InlineSnapshotTesting
 import SVG_Standard
 import Testing
 
