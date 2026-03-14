@@ -15,11 +15,14 @@ let package = Package(
         .library(
             name: "SVG Standard",
             targets: ["SVG Standard"]
-        )
+        ),
+        .library(
+            name: "SVG Standard Test Support",
+            targets: ["SVG Standard Test Support"]
+        ),
     ],
     dependencies: [
         .package(path: "../../swift-w3c/swift-w3c-svg"),
-        // .package(url: "https://github.com/pointfreeco/swift-snapshot-testing", from: "1.18.0")
     ],
     targets: [
         .target(
@@ -28,11 +31,20 @@ let package = Package(
                 .product(name: "W3C SVG", package: "swift-w3c-svg")
     ]
         ),
+        .target(
+            name: "SVG Standard Test Support",
+            dependencies: [
+                "SVG Standard",
+            ],
+            path: "Tests/Support"
+        ),
         .testTarget(
             name: "SVG Standard Tests",
             dependencies: [
                 "SVG Standard",
-            ]
+                "SVG Standard Test Support",
+            ],
+            path: "Tests/SVG Standard Tests"
         ),
     ],
     swiftLanguageModes: [.v6]
