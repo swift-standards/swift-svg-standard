@@ -22,7 +22,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../../swift-w3c/swift-w3c-svg"),
+        .package(url: "https://github.com/swift-w3c/swift-w3c-svg.git", branch: "main"),
     ],
     targets: [
         .target(
