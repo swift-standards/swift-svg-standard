@@ -1,6 +1,6 @@
 # .github/metadata.yaml
 # Triaged by AI-assisted bulk pass (2026-04-29).
-description: "SVG standard wrapper combining W3C SVG in Swift."
+description: "Canonical re-export of the W3C SVG 2 implementation for Swift."
 topics:
   - standards
   - svg
