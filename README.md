@@ -57,11 +57,11 @@ All functionality is provided by the underlying W3C SVG 2 implementation.
 ## Related Packages
 
 ### Core Dependencies
-- [swift-w3c-svg](https://github.com/swift-standards/swift-w3c-svg): W3C SVG 2 specification implementation
+- [swift-w3c-svg](https://github.com/swift-w3c/swift-w3c-svg): W3C SVG 2 specification implementation
 
 ### Ecosystem
 - [swift-svg-printer](https://github.com/coenttb/swift-svg-printer): Rendering layer for SVG to String/bytes
-- [swift-svg](https://github.com/coenttb/swift-svg): Type-safe SVG generation
+- [swift-svg](https://github.com/swift-foundations/swift-svg): Type-safe SVG generation
 
 ## Migration from swift-svg-standard
 
