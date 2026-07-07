@@ -16,8 +16,10 @@ struct SVGStandardSnapshotTests {
     @Test
     func `Line description`() {
         let line = SVG_Standard.Shapes.Line(
-            x1: .init(0), y1: .init(0),
-            x2: .init(100), y2: .init(100)
+            x1: .init(0),
+            y1: .init(0),
+            x2: .init(100),
+            y2: .init(100)
         )
         #snapshot("\(line)", as: .lines)
     }

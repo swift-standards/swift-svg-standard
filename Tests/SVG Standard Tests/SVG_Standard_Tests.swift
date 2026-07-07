@@ -47,8 +47,10 @@ extension SVGStandardTests.Unit {
     @Test
     func `Line stores start and end coordinates`() {
         let line = SVG_Standard.Shapes.Line(
-            x1: .init(10), y1: .init(20),
-            x2: .init(100), y2: .init(200)
+            x1: .init(10),
+            y1: .init(20),
+            x2: .init(100),
+            y2: .init(200)
         )
         #expect(line.x1 == .init(10))
         #expect(line.y1 == .init(20))
@@ -207,8 +209,14 @@ extension SVGStandardTests.Unit {
 
     @Test
     func `LinearGradient GradientUnits raw values`() {
-        #expect(SVG_Standard.PaintServers.LinearGradient.GradientUnits.userSpaceOnUse.rawValue == "userSpaceOnUse")
-        #expect(SVG_Standard.PaintServers.LinearGradient.GradientUnits.objectBoundingBox.rawValue == "objectBoundingBox")
+        #expect(
+            SVG_Standard.PaintServers.LinearGradient.GradientUnits.userSpaceOnUse.rawValue
+                == "userSpaceOnUse"
+        )
+        #expect(
+            SVG_Standard.PaintServers.LinearGradient.GradientUnits.objectBoundingBox.rawValue
+                == "objectBoundingBox"
+        )
     }
 
     @Test
@@ -324,8 +332,10 @@ extension SVGStandardTests.EdgeCase {
     @Test
     func `Line with coincident start and end`() {
         let line = SVG_Standard.Shapes.Line(
-            x1: .init(50), y1: .init(50),
-            x2: .init(50), y2: .init(50)
+            x1: .init(50),
+            y1: .init(50),
+            x2: .init(50),
+            y2: .init(50)
         )
         #expect(line.x1 == line.x2)
         #expect(line.y1 == line.y2)
@@ -372,8 +382,10 @@ extension SVGStandardTests.EdgeCase {
     @Test
     func `ViewBox with non-zero origin`() {
         let vb = SVG_Standard.Types.ViewBox(
-            minX: .init(10), minY: .init(20),
-            width: .init(100), height: .init(200)
+            minX: .init(10),
+            minY: .init(20),
+            width: .init(100),
+            height: .init(200)
         )
         #expect(vb.description == "10 20 100 200")
     }
