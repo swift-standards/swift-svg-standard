@@ -4,22 +4,21 @@
 import SVG_Standard
 import Testing
 
-// MARK: - SVG_Standard (typealias for W3C_SVG2)
+// MARK: - SVG_Standard
 
-// SVG_Standard is a typealias for W3C_SVG2 (generic type), so we use
-// parallel namespace pattern per [TEST-004].
-
-@Suite
-struct SVGStandardTests {
-    @Suite struct Unit {}
-    @Suite struct EdgeCase {}
-    @Suite struct Integration {}
-    @Suite(.serialized) struct Performance {}
+extension SVG_Standard {
+    @Suite
+    struct Test {
+        @Suite struct Unit {}
+        @Suite struct `Edge Case` {}
+        @Suite struct Integration {}
+        @Suite(.serialized) struct Performance {}
+    }
 }
 
 // MARK: - Unit Tests
 
-extension SVGStandardTests.Unit {
+extension SVG_Standard.Test.Unit {
 
     // MARK: Shapes
 
@@ -321,7 +320,7 @@ extension SVGStandardTests.Unit {
 
 // MARK: - Edge Case Tests
 
-extension SVGStandardTests.EdgeCase {
+extension SVG_Standard.Test.`Edge Case` {
 
     @Test
     func `Circle with zero radius`() {
@@ -399,7 +398,7 @@ extension SVGStandardTests.EdgeCase {
 
 // MARK: - Integration Tests
 
-extension SVGStandardTests.Integration {
+extension SVG_Standard.Test.Integration {
 
     @Test
     func `SVG_Standard typealias provides access to all namespaces`() {
