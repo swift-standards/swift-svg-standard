@@ -1,7 +1,7 @@
 # swift-svg-standard
 
-[![CI](https://github.com/swift-standards/swift-svg-standard/workflows/CI/badge.svg)](https://github.com/swift-standards/swift-svg-standard/actions/workflows/ci.yml)
 ![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
+[![CI](https://github.com/swift-standards/swift-svg-standard/workflows/CI/badge.svg)](https://github.com/swift-standards/swift-svg-standard/actions/workflows/ci.yml)
 
 Swift SVG Standard — Re-export of W3C SVG 2 specification implementation.
 
