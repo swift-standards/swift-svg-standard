@@ -25,6 +25,17 @@ dependencies: [
 ]
 ```
 
+Add the product to your target:
+
+```swift
+.target(
+    name: "App",
+    dependencies: [
+        .product(name: "SVG Standard", package: "swift-svg-standard")
+    ]
+)
+```
+
 ## Usage
 
 ```swift
