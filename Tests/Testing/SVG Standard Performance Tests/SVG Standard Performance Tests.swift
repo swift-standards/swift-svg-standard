@@ -4,12 +4,11 @@
 import SVG_Standard
 import Testing
 
-@Suite(.serialized)
-struct SVGStandardPerformanceTests {
+extension SVG_Standard.Test.Integration.Performance {
 
     @Test(.timed(iterations: 100, warmup: 10))
     func `Circle creation`() {
-        for i in 0..<1000 {
+        (0..<1000).forEach { i in
             let d = Double(i)
             let _ = SVG_Standard.Shapes.Circle(
                 cx: .init(d),
@@ -21,7 +20,7 @@ struct SVGStandardPerformanceTests {
 
     @Test(.timed(iterations: 100, warmup: 10))
     func `Line creation`() {
-        for i in 0..<1000 {
+        (0..<1000).forEach { i in
             let d = Double(i)
             let _ = SVG_Standard.Shapes.Line(
                 x1: .init(0),
@@ -38,8 +37,8 @@ struct SVGStandardPerformanceTests {
             .px(100), .em(2), .ex(1), .pt(12), .pc(6),
             .mm(10), .cm(5), .in(1), .percentage(50), .number(42),
         ]
-        for _ in 0..<1000 {
-            for length in lengths {
+        (0..<1000).forEach { _ in
+            lengths.forEach { length in
                 _ = length.description
             }
         }
@@ -47,7 +46,7 @@ struct SVGStandardPerformanceTests {
 
     @Test(.timed(iterations: 100, warmup: 10))
     func `ViewBox description`() {
-        for i in 0..<1000 {
+        (0..<1000).forEach { i in
             let d = Double(i)
             let vb = SVG_Standard.Types.ViewBox(
                 width: .init(d),
@@ -69,8 +68,8 @@ struct SVGStandardPerformanceTests {
             .skewY(angle: .init(15)),
             .matrix(a: 1, b: 0, c: 0, d: 1, e: 0, f: 0),
         ]
-        for _ in 0..<1000 {
-            for transform in transforms {
+        (0..<1000).forEach { _ in
+            transforms.forEach { transform in
                 _ = transform.description
             }
         }
@@ -78,7 +77,7 @@ struct SVGStandardPerformanceTests {
 
     @Test(.timed(iterations: 100, warmup: 10))
     func `SVG document creation with viewBox`() {
-        for i in 0..<1000 {
+        (0..<1000).forEach { i in
             let d = Double(i + 1)
             let vb = SVG_Standard.Types.ViewBox(
                 width: .init(d),
@@ -94,7 +93,7 @@ struct SVGStandardPerformanceTests {
 
     @Test(.timed(iterations: 100, warmup: 10))
     func `LinearGradient creation with all properties`() {
-        for _ in 0..<1000 {
+        (0..<1000).forEach { _ in
             let _ = SVG_Standard.PaintServers.LinearGradient(
                 id: "gradient",
                 x1: "0%",
