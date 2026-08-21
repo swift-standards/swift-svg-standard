@@ -1,6 +1,3 @@
-// SVG Standard Performance Tests.swift
-// SVG Standard Performance Tests
-
 import SVG_Standard
 import Testing
 

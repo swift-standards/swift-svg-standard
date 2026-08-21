@@ -1,10 +1,5 @@
-// SVG Standard Tests.swift
-// SVG Standard Tests
-
 import SVG_Standard
 import Testing
-
-// MARK: - SVG_Standard
 
 extension SVG_Standard {
     @Suite
@@ -16,11 +11,7 @@ extension SVG_Standard {
     }
 }
 
-// MARK: - Unit Tests
-
 extension SVG_Standard.Test.Unit {
-
-    // MARK: Shapes
 
     @Test
     func `Circle stores center coordinates and radius`() {
@@ -66,8 +57,6 @@ extension SVG_Standard.Test.Unit {
     func `Rectangle tag name is rect`() {
         #expect(SVG_Standard.Shapes.Rectangle.tagName == "rect")
     }
-
-    // MARK: Types
 
     @Test
     func `Length px description includes unit suffix`() {
@@ -156,8 +145,6 @@ extension SVG_Standard.Test.Unit {
         #expect(vb.description == "0 0 100 200")
     }
 
-    // MARK: Painting
-
     @Test
     func `LineCap has three values with correct raw strings`() {
         #expect(SVG_Standard.Painting.LineCap.butt.rawValue == "butt")
@@ -177,8 +164,6 @@ extension SVG_Standard.Test.Unit {
         #expect(SVG_Standard.Painting.FillRule.nonzero.rawValue == "nonzero")
         #expect(SVG_Standard.Painting.FillRule.evenodd.rawValue == "evenodd")
     }
-
-    // MARK: Paint Servers
 
     @Test
     func `LinearGradient stores id`() {
@@ -225,8 +210,6 @@ extension SVG_Standard.Test.Unit {
         #expect(SVG_Standard.PaintServers.LinearGradient.SpreadMethod.repeat.rawValue == "repeat")
     }
 
-    // MARK: Document
-
     @Test
     func `SVG document element stores dimensions`() {
         let svg = SVG_Standard.Document.SVG(width: .px(800), height: .px(600))
@@ -245,8 +228,6 @@ extension SVG_Standard.Test.Unit {
         let svg = SVG_Standard.Document.SVG(viewBox: vb)
         #expect(svg.viewBox == vb)
     }
-
-    // MARK: Text
 
     @Test
     func `Text element stores content`() {
@@ -272,8 +253,6 @@ extension SVG_Standard.Test.Unit {
         #expect(SVG_Standard.Text.Text.LengthAdjust.spacing.rawValue == "spacing")
         #expect(SVG_Standard.Text.Text.LengthAdjust.spacingAndGlyphs.rawValue == "spacingAndGlyphs")
     }
-
-    // MARK: Transform
 
     @Test
     func `Transform translate description`() {
@@ -317,8 +296,6 @@ extension SVG_Standard.Test.Unit {
         #expect(t.description == "skewY(15)")
     }
 }
-
-// MARK: - Edge Case Tests
 
 extension SVG_Standard.Test.`Edge Case` {
 
@@ -396,33 +373,26 @@ extension SVG_Standard.Test.`Edge Case` {
     }
 }
 
-// MARK: - Integration Tests
-
 extension SVG_Standard.Test.Integration {
 
     @Test
     func `SVG_Standard typealias provides access to all namespaces`() {
-        // Shapes
+
         _ = SVG_Standard.Shapes.Circle(cx: .init(0), cy: .init(0), r: .init(10))
         _ = SVG_Standard.Shapes.Line(x1: .init(0), y1: .init(0), x2: .init(10), y2: .init(10))
 
-        // Types
         _ = SVG_Standard.Types.Length.px(100)
         _ = SVG_Standard.Types.ViewBox(width: .init(100), height: .init(100))
         _ = SVG_Standard.Types.Transform.translate(x: .init(0), y: .init(0))
 
-        // Painting
         _ = SVG_Standard.Painting.LineCap.butt
         _ = SVG_Standard.Painting.LineJoin.miter
         _ = SVG_Standard.Painting.FillRule.nonzero
 
-        // Paint Servers
         _ = SVG_Standard.PaintServers.LinearGradient(id: "test")
 
-        // Document
         _ = SVG_Standard.Document.SVG(width: .px(100), height: .px(100))
 
-        // Text
         _ = SVG_Standard.Text.Text(content: "test")
     }
 

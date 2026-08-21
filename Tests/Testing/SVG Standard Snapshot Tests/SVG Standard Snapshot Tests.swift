@@ -1,6 +1,3 @@
-// SVG Standard Snapshot Tests.swift
-// SVG Standard Snapshot Tests
-
 import SVG_Standard
 import Testing
 
