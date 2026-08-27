@@ -72,7 +72,7 @@ All functionality is provided by the underlying W3C SVG 2 implementation.
 
 ### Ecosystem
 - [swift-svg-printer](https://github.com/coenttb/swift-svg-printer): Rendering layer for SVG to String/bytes
-- [swift-svg](https://github.com/swift-foundations/swift-svg): Type-safe SVG generation
+- [swift-svg](https://github.com/swift-compositions/swift-svg): Type-safe SVG generation
 
 ## Migration from swift-svg-standard
 
