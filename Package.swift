@@ -34,15 +34,15 @@ let package = Package(
         .target(
             name: "SVG Standard Test Support",
             dependencies: [
-                "SVG Standard"
+                .target(name: "SVG Standard")
             ],
             path: "Tests/Support"
         ),
         .testTarget(
             name: "SVG Standard Tests",
             dependencies: [
-                "SVG Standard",
-                "SVG Standard Test Support",
+                .target(name: "SVG Standard"),
+                .target(name: "SVG Standard Test Support"),
             ],
             path: "Tests/SVG Standard Tests"
         ),
@@ -51,17 +51,14 @@ let package = Package(
 )
 
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
-    let ecosystem: [SwiftSetting] = [
+    target.swiftSettings = (target.swiftSettings ?? []) + [
         .strictMemorySafety(),
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
         .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
-        .enableExperimentalFeature("Lifetimes"),
         .enableUpcomingFeature("InferIsolatedConformances"),
+        .enableExperimentalFeature("Lifetimes"),
+        .treatAllWarnings(as: .error),
     ]
-
-    let package: [SwiftSetting] = []
-
-    target.swiftSettings = (target.swiftSettings ?? []) + ecosystem + package
 }
