@@ -1,7 +1,9 @@
 import SVG_Standard
 import Testing
 
-extension SVG_Standard {
+enum `SVG_Standard Tests` {}
+
+extension `SVG_Standard Tests` {
     @Suite
     struct Test {
         @Suite struct Unit {}
@@ -11,7 +13,7 @@ extension SVG_Standard {
     }
 }
 
-extension SVG_Standard.Test.Unit {
+extension `SVG_Standard Tests`.Test.Unit {
 
     @Test
     func `Circle stores center coordinates and radius`() {
@@ -297,7 +299,7 @@ extension SVG_Standard.Test.Unit {
     }
 }
 
-extension SVG_Standard.Test.`Edge Case` {
+extension `SVG_Standard Tests`.Test.`Edge Case` {
 
     @Test
     func `Circle with zero radius`() {
@@ -373,7 +375,7 @@ extension SVG_Standard.Test.`Edge Case` {
     }
 }
 
-extension SVG_Standard.Test.Integration {
+extension `SVG_Standard Tests`.Test.Integration {
 
     @Test
     func `SVG_Standard typealias provides access to all namespaces`() {

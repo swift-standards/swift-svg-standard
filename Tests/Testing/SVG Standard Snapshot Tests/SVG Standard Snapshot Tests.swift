@@ -1,7 +1,9 @@
 import SVG_Standard
 import Testing
 
-extension SVG_Standard.Test.Integration {
+enum `SVG_Standard.Test.Integration Tests` {}
+
+extension `SVG_Standard.Test.Integration Tests` {
     @Suite(.serialized)
     struct Snapshot {
 
