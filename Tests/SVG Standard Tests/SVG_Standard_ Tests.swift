@@ -149,16 +149,16 @@ extension `SVG_Standard Tests`.Test.Unit {
 
     @Test
     func `LineCap has three values with correct raw strings`() {
-        #expect(SVG_Standard::SVG_Standard.Painting.LineCap.butt.rawValue == "butt")
-        #expect(SVG_Standard::SVG_Standard.Painting.LineCap.round.rawValue == "round")
-        #expect(SVG_Standard::SVG_Standard.Painting.LineCap.square.rawValue == "square")
+        #expect(SVG_Standard::SVG_Standard.Painting.Line.Cap.butt.rawValue == "butt")
+        #expect(SVG_Standard::SVG_Standard.Painting.Line.Cap.round.rawValue == "round")
+        #expect(SVG_Standard::SVG_Standard.Painting.Line.Cap.square.rawValue == "square")
     }
 
     @Test
     func `LineJoin has three values with correct raw strings`() {
-        #expect(SVG_Standard::SVG_Standard.Painting.LineJoin.miter.rawValue == "miter")
-        #expect(SVG_Standard::SVG_Standard.Painting.LineJoin.round.rawValue == "round")
-        #expect(SVG_Standard::SVG_Standard.Painting.LineJoin.bevel.rawValue == "bevel")
+        #expect(SVG_Standard::SVG_Standard.Painting.Line.Join.miter.rawValue == "miter")
+        #expect(SVG_Standard::SVG_Standard.Painting.Line.Join.round.rawValue == "round")
+        #expect(SVG_Standard::SVG_Standard.Painting.Line.Join.bevel.rawValue == "bevel")
     }
 
     @Test
@@ -169,18 +169,18 @@ extension `SVG_Standard Tests`.Test.Unit {
 
     @Test
     func `LinearGradient stores id`() {
-        let gradient = SVG_Standard::SVG_Standard.PaintServers.LinearGradient(id: "myGradient")
+        let gradient = SVG_Standard::SVG_Standard.Paint.LinearGradient(id: "myGradient")
         #expect(gradient.id == "myGradient")
     }
 
     @Test
     func `LinearGradient tag name is linearGradient`() {
-        #expect(SVG_Standard::SVG_Standard.PaintServers.LinearGradient.tagName == "linearGradient")
+        #expect(SVG_Standard::SVG_Standard.Paint.LinearGradient.tagName == "linearGradient")
     }
 
     @Test
     func `LinearGradient stores gradient vector coordinates`() {
-        let gradient = SVG_Standard::SVG_Standard.PaintServers.LinearGradient(
+        let gradient = SVG_Standard::SVG_Standard.Paint.LinearGradient(
             id: "g1",
             x1: "0%",
             y1: "0%",
@@ -196,20 +196,20 @@ extension `SVG_Standard Tests`.Test.Unit {
     @Test
     func `LinearGradient GradientUnits raw values`() {
         #expect(
-            SVG_Standard::SVG_Standard.PaintServers.LinearGradient.GradientUnits.userSpaceOnUse.rawValue
+            SVG_Standard::SVG_Standard.Paint.LinearGradient.Units.userSpaceOnUse.rawValue
                 == "userSpaceOnUse"
         )
         #expect(
-            SVG_Standard::SVG_Standard.PaintServers.LinearGradient.GradientUnits.objectBoundingBox.rawValue
+            SVG_Standard::SVG_Standard.Paint.LinearGradient.Units.objectBoundingBox.rawValue
                 == "objectBoundingBox"
         )
     }
 
     @Test
     func `LinearGradient SpreadMethod raw values`() {
-        #expect(SVG_Standard::SVG_Standard.PaintServers.LinearGradient.SpreadMethod.pad.rawValue == "pad")
-        #expect(SVG_Standard::SVG_Standard.PaintServers.LinearGradient.SpreadMethod.reflect.rawValue == "reflect")
-        #expect(SVG_Standard::SVG_Standard.PaintServers.LinearGradient.SpreadMethod.repeat.rawValue == "repeat")
+        #expect(SVG_Standard::SVG_Standard.Paint.LinearGradient.Spread.pad.rawValue == "pad")
+        #expect(SVG_Standard::SVG_Standard.Paint.LinearGradient.Spread.reflect.rawValue == "reflect")
+        #expect(SVG_Standard::SVG_Standard.Paint.LinearGradient.Spread.repeat.rawValue == "repeat")
     }
 
     @Test
@@ -329,7 +329,7 @@ extension `SVG_Standard Tests`.Test.`Edge Case` {
 
     @Test
     func `LinearGradient with all nil optional fields`() {
-        let gradient = SVG_Standard::SVG_Standard.PaintServers.LinearGradient()
+        let gradient = SVG_Standard::SVG_Standard.Paint.LinearGradient()
         #expect(gradient.id == nil)
         #expect(gradient.x1 == nil)
         #expect(gradient.y1 == nil)
@@ -387,11 +387,11 @@ extension `SVG_Standard Tests`.Test.Integration {
         _ = SVG_Standard::SVG_Standard.Types.ViewBox(width: .init(100), height: .init(100))
         _ = SVG_Standard::SVG_Standard.Types.Transform.translate(x: .init(0), y: .init(0))
 
-        _ = SVG_Standard::SVG_Standard.Painting.LineCap.butt
-        _ = SVG_Standard::SVG_Standard.Painting.LineJoin.miter
+        _ = SVG_Standard::SVG_Standard.Painting.Line.Cap.butt
+        _ = SVG_Standard::SVG_Standard.Painting.Line.Join.miter
         _ = SVG_Standard::SVG_Standard.Painting.FillRule.nonzero
 
-        _ = SVG_Standard::SVG_Standard.PaintServers.LinearGradient(id: "test")
+        _ = SVG_Standard::SVG_Standard.Paint.LinearGradient(id: "test")
 
         _ = SVG_Standard::SVG_Standard.Document.SVG(width: .px(100), height: .px(100))
 

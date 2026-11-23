@@ -71,14 +71,14 @@ extension `SVG_Standard.Test.Integration Tests` {
 
         @Test
         func `LineCap raw values`() {
-            let caps: [SVG_Standard::SVG_Standard.Painting.LineCap] = [.butt, .round, .square]
+            let caps: [SVG_Standard::SVG_Standard.Painting.Line.Cap] = [.butt, .round, .square]
             let output = caps.map(\.rawValue).joined(separator: "\n")
             #snapshot(output, as: .lines)
         }
 
         @Test
         func `LineJoin raw values`() {
-            let joins: [SVG_Standard::SVG_Standard.Painting.LineJoin] = [.miter, .round, .bevel]
+            let joins: [SVG_Standard::SVG_Standard.Painting.Line.Join] = [.miter, .round, .bevel]
             let output = joins.map(\.rawValue).joined(separator: "\n")
             #snapshot(output, as: .lines)
         }

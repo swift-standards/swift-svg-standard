@@ -91,7 +91,7 @@ extension SVG_Standard::SVG_Standard.Test.Integration.Performance {
     @Test(.timed(iterations: 100, warmup: 10))
     func `LinearGradient creation with all properties`() {
         (0..<1000).forEach { _ in
-            let _ = SVG_Standard::SVG_Standard.PaintServers.LinearGradient(
+            let _ = SVG_Standard::SVG_Standard.Paint.LinearGradient(
                 id: "gradient",
                 x1: "0%",
                 y1: "0%",
